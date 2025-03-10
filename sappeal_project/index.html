@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'appeal Cosmetics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <a href="logout.php" style="border: 1px solid black; padding: 10px; display: inline-block; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); color:aquamarine">Logout</a>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name = "" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">S'appeal</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+        </nav>
+      <div class="icons">
+        <a href="#" class="fas fa-search" onclick="handleSearch(); return false;"></a>
+        <a href="#" class="fas fa-shopping-cart" onclick="toggleCartPopup(); return false;"></a>
+        <button class="popup-button" onclick="togglePopup()"><a href="#" class="fas fa-user"></a></button> 
+
+      </div>
+   <!-- Popup Box -->
+    <script>
+   function handleSearch() {
+    // Example: Open a search bar or redirect to a search page
+    const searchQuery = prompt("Enter your search query:"); // Prompt the user for input
+    if (searchQuery) {
+        // Redirect to a search page with the query as a parameter
+        window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
+    }
+}
+</script>
+<div class="popup-box" id="popupBox">
+    <button class="close-btn" onclick="togglePopup()">×</button>
+    <ul class="account-list">
+        <li><a href="#" onclick="showPersonalInfo()">Personal Info</a></li>
+        <li><a href="#">Purchase Info</a></li>
+        <li><a href="#">Payment Record</a></li>
+        <li><a href="logout.php" class="logout-link">Logout</a></li>
+    </ul>
+    <!-- Personal Info Section -->
+    <div id="personalInfo" style="display: none;">
+        <h2>Personal Information</h2>
+        <p><strong>Name:</strong> <span id="profileName"></span></p>
+        <p><strong>Address:</strong> <span id="profileAddress"></span></p>
+        <p><strong>Contact No:</strong> <span id="profileContactNo"></span></p>
+        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+        <button onclick="showAccountList()" class="back-btn">Back</button> <!-- Back Button -->
+    </div>
+</div>
+</div>
+    </header>
+
+
+  <section class = "home" id="home">
+    <div class="content">
+      <h3>YOUR TRUSTED BEAUTY PARTNER</h3>
+      <p>Explore premium skincare and beauty products for all skin types</p>
+      <a href="#" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+      <h1 class="heading">About us</h1>
+      <div class="row">
+        
+      <div class="video-container">
+      <video src="video/video.mp4" loop autoplay muted></video>
+    </div>
+
+    <div class="content">
+      <h3>Why Us?</h3>
+      <p>S'appeal Cosmetics is a premium beauty brand that offers a wide range of skincare and beauty products for all skin types. Our products are made from natural ingredients and are cruelty-free. We believe that everyone deserves to feel beautiful and confident in their own skin.
+       Our mission is to help you achieve that by providing you with high-quality products that are safe and effective. Whether you have dry, oily, or sensitive skin, we have something for everyone. Our products are designed to nourish, hydrate, and protect your skin, so you can look and feel your best every day. So why wait? Start your journey to beautiful skin with S'appeal Cosmetics today!</p>
+       <a href="#" class="btn">Read More</a>
+    </div>
+      </div>  
+    <section class="shop" id="shop">
+    <h1 class="heading">Our Products</h1>
+    <div class="box-container">
+        <div class="box">
+            <span class="discount">-15%</span>
+            <div class="image">
+                <img src="images/lipstick.jpg" alt="Lipstick">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="1">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Lipstick</h3>
+                <div class="price">Nrs.510 <span>Nrs.600</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-12%</span>
+            <div class="image">
+                <img src="images/foundation.jpg" alt="Foundation">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="2">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Foundation</h3>
+                <div class="price">Nrs.660 <span>Nrs.750</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="images/highlighter.jpg" alt="Highlighter">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="3">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Highlighter</h3>
+                <div class="price">Nrs.765 <span>Nrs.850</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-15%</span>
+            <div class="image">
+                <img src="images/mascara.jpg" alt="Mascara">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="4">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Mascara</h3>
+                <div class="price">Nrs.640 <span>Nrs.755</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="images/hairoil.jpg" alt="Hair Oil">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="5">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Hair Oil</h3>
+                <div class="price">Nrs.450 <span>Nrs.500</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-14%</span>
+            <div class="image">
+                <img src="images/blush.jpg" alt="Blush">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="6">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Blush</h3>
+                <div class="price">Nrs.600 <span>Nrs.700</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="images/nail.jpg" alt="Nail Polish">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="7">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Nail Polish</h3>
+                <div class="price">Nrs.405 <span>Nrs.450</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-20%</span>
+            <div class="image">
+                <img src="images/perfume.jpg" alt="Perfume">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="8">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Perfume</h3>
+                <div class="price">Nrs.720 <span>Nrs.900</span></div>
+            </div>
+        </div>
+        
+        <div class="box">
+            <span class="discount">-13%</span>
+            <div class="image">
+                <img src="images/cleanser.jpg" alt="Cleanser">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn" data-product-id="9">Add to Cart</a>                         
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cleanser</h3>
+                <div class="price">Nrs.565 <span>Nrs.650</span></div>
+            </div>
+        </div>
+
+<script>
+
+        // Array to store favourite products
+        let favourites = [];
+        
+        // Function to add/remove a product from favourites
+        function toggleFavourite(productId) {
+            const index = favourites.indexOf(productId);
+        
+            if (index === -1) {
+                // Add to favourites
+                favourites.push(productId);
+                alert('Added to favourites!');
+            } else {
+                // Remove from favourites
+                favourites.splice(index, 1);
+                alert('Removed from favourites!');
+            }
+        
+            // Update UI (e.g., change heart color)
+            const heartButton = document.querySelector(`.fa-heart[data-product-id="${productId}"]`);
+            heartButton.classList.toggle('active');
+        }
+        
+        // Add event listeners to all heart buttons
+        document.querySelectorAll('.fa-heart').forEach((heartButton) => {
+            heartButton.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default link behavior
+        
+                const productId = heartButton.getAttribute('data-product-id');
+                toggleFavourite(productId);
+            });
+        });
+    </script>
+
+<script>
+        // Function to handle sharing
+        function shareProduct(productName, productLink) {
+            if (navigator.share) {
+                // Use the Web Share API if supported
+                navigator.share({
+                    title: `Check out this product: ${productName}`,
+                    text: `I found this amazing product (${productName}) and thought you might like it.`,
+                    url: productLink,
+                })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.error('Error sharing:', error));
+            } else {
+                // Fallback for browsers that don't support the Web Share API
+                copyToClipboard(productLink);
+                alert('Link copied to clipboard!');
+            }
+        }
+        
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+        
+        // Add event listeners to all share buttons
+        document.querySelectorAll('.fa-share').forEach((shareButton) => {
+            shareButton.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default link behavior
+        
+                // Get product details
+                const productBox = shareButton.closest('.box');
+                const productName = productBox.querySelector('h3').innerText;
+                const productLink = window.location.href; // Replace with the actual product link
+        
+                // Share the product
+                shareProduct(productName, productLink);
+            });
+        });
+    </script> 
+        <!-- Cart Popup -->
+        <div id="cartPopup" class="cart-popup">
+            <div class="cart-content">
+                <button class="close-btn" onclick="toggleCartPopup()">&times;</button>
+                <h2>Your Cart</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItemsPopup">
+                        <tr><td colspan="4">Your cart is empty.</td></tr>
+                    </tbody>
+                </table>
+                <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+            </div>        
+</div>
+</style>
+
+        <script>
+            function addToCart(productId, productName, productPrice) {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+                const productInCart = cart.find(item => item.id === productId);
+                if (productInCart) {
+                    productInCart.quantity += 1;
+                } else {
+                    cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+                }
+    
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert("Product added to cart!");
+            }
+    
+            function attachCartEventListeners() {
+                document.querySelectorAll(".cart-btn").forEach(button => {
+                    button.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        const productId = this.getAttribute("data-product-id");
+                        const productName = this.closest(".box").querySelector("h3").innerText;
+                        const productPrice = this.closest(".box").querySelector(".price").childNodes[0].textContent.trim().replace("Nrs.", "");
+    
+                        addToCart(productId, productName, productPrice);
+                    });
+                });
+            }
+    
+            document.addEventListener("DOMContentLoaded", attachCartEventListeners);
+        </script>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h1 class="heading">Contact Us</h1>
+        <div class="container">
+            <!-- Registration Form -->
+            <div class="form-container">
+                <fieldset>
+                    <legend>Register</legend>
+                    <form id="registrationForm" action="submit.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No:</label>
+                            <input type="text" id="contactno" name="contactno" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+                </fieldset>
+            </div>
+    
+            <!-- Contact Details and Support -->
+            <div class="contact-details">
+                <div class="support-card">
+                    <h3>Customer Support</h3>
+                    <p>Need help with orders, returns, or anything else? We're here to help!</p>
+                    <div class="support-buttons">
+                        <a href="tel:+977123456789" class="btn">Call Us</a>
+                        <a href="mailto:support@ecommerce.com" class="btn secondary">Email Us</a>
+                    </div>
+                </div>
+    
+                <div class="help-card">
+                    <h3>Help Topics</h3>
+                    <ul>
+                        <li><a href="/order-tracking">Track Your Order</a></li>
+                        <li><a href="/returns">Return or Exchange Items</a></li>
+                        <li><a href="/shipping-info">Shipping Information</a></li>
+                        <li><a href="/faq">FAQs</a></li>
+                    </ul>
+                </div>
+    
+                <div class="contact-info">
+                    <h3>Our Contact Details</h3>
+                    <p><strong>Address:</strong> 123 Lazimpat, Kathmandu, Nepal</p>
+                    <p><strong>Phone:</strong> <a href="tel:+977123456789">+977-123-456-789</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:support@sappeal.com">support@sappeal.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <script>
+    // Function to show the success message
+    function showSuccessMessage() {
+        document.getElementById("successMessage").style.display = "block";
+    }
+
+    // Function to close the success message
+    function closePopup() {
+        document.getElementById("successMessage").style.display = "none";
+    }
+
+    // Handle form submission
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Submit the form data using Fetch API
+        fetch("submit.php", {
+            method: "POST",
+            body: new FormData(this)
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data.includes("success")) {
+                alert("Registration successful!"); // Show success message
+            } else {
+                alert("Registration failed. Please try again."); // Show error message
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again.");
+        });
+    });
+</script>
+
+<footer class="footer">
+  <div class="footer-top">
+    
+      <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+           <li> <a href="#home">Home</a></li>
+           <li> <a href="#about">About</a></li>
+           <li> <a href="#shop">Shop</a></li>
+           <li> <a href="#contact">Contact</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-links">
+          <h3>Extra Links</h3>
+          <ul>
+              <li><a href="#home">Search</a></li>
+              <li><a href="#home">My Cart</a></li>
+              <li><a href="#home">My Account</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:info@sappeal.com">info@sappeal.com</a></p>
+          <p>Phone: <a href="tel:+977123456789">+977-123-456-789</a></p>
+          <p>Location:Lazimpat,Kathmandu</p>
+      </div>
+
+      <div class="footer-social">
+          <h3>Connect with Us</h3>
+          <div class="social-links">
+              <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.pinterest.com" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      &copy; 2025 S'appeal. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<script>
+    // Toggle popup visibility
+    function togglePopup() {
+        var popup = document.getElementById("popupBox");
+        if (popup.style.display === "none" || popup.style.display === "") {
+            popup.style.display = "block";
+        } else {
+            popup.style.display = "none";
+        }
+    }
+
+    // Show Personal Info section
+    function showPersonalInfo() {
+        // Hide the account list
+        document.querySelector(".account-list").style.display = "none";
+
+        // Show the Personal Info section
+        document.getElementById("personalInfo").style.display = "block";
+
+        // Fetch and populate user profile data
+        fetch("get_profile.php")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("profileName").textContent = data.name;
+                document.getElementById("profileAddress").textContent = data.address;
+                document.getElementById("profileContactNo").textContent = data.contactno;
+                document.getElementById("profileEmail").textContent = data.email;
+            })
+            .catch(error => {
+                console.error("Error fetching profile data:", error);
+            });
+    }
+
+    // Close popup when clicking outside
+    window.onclick = function(event) {
+        var popup = document.getElementById("popupBox");
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+</script>
+<script>
+// Function to toggle cart popup
+function toggleCartPopup() {
+    const cartPopup = document.getElementById("cartPopup");
+    if (cartPopup.style.display === "block") {
+        cartPopup.style.display = "none";
+    } else {
+        displayCartItemsPopup(); // Load cart data when opening
+        cartPopup.style.display = "block";
+    }
+}
+
+// Function to display cart items inside the popup
+function displayCartItemsPopup() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemsContainer = document.getElementById("cartItemsPopup");
+
+    cartItemsContainer.innerHTML = ""; // Clear previous content
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `<tr><td colspan="4">Your cart is empty.</td></tr>`;
+        return;
+    }
+
+    cart.forEach(item => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>Nrs.${item.price}</td>
+            <td>${item.quantity}</td>
+            <td>Nrs.${item.price * item.quantity}</td>
+        `;
+        cartItemsContainer.appendChild(row);
+    });
+}
+
+    // Show Account List section
+    function showAccountList() {
+        // Hide the Personal Info section
+        document.getElementById("personalInfo").style.display = "none";
+
+        // Show the account list
+        document.querySelector(".account-list").style.display = "block";
+    }
+
+    // Close popup when clicking outside
+    window.onclick = function(event) {
+        var popup = document.getElementById("popupBox");
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+</script>
+<div class="popup-box" id="popupBox">
+<button class="close-btn" onclick="togglePopup()">×</button>
+<ul class="account-list">
+    <li>Personal Info</li>
+    <li>Purchase Info</li>
+    <li>Payment Record</li>
+</ul>
+<a href="form.html" style="border: 1px solid black; padding: 10px; display: inline-block; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); color:aquamarine">Logout</a>
+</div>
+
+<script>
+
+function togglePopup() {
+    var popup = document.getElementById("popupBox");
+    if (popup.style.display === "none" || popup.style.display === "") {
+        popup.style.display = "block";
+    } else {
+        popup.style.display = "none"; 
+    }
+}
+
+</script>
+<script>
+function homepage(){
+        document.getElementById("popup-box").Logout();
+        window.location.href="form.html"
+}
+</script>
+
+</body>
+</html>

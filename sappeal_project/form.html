@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Login - S'appeal</title>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="index.html" class="logo">S'appeal</a> <!-- Link back to Homepage -->
+    </header>
+
+    <!-- Login Form -->
+    <fieldset>
+        <legend>Login</legend>
+        <form id="loginForm" action="login.php" method="POST">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="email" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="index.html#contact">Register here</a></p> <!-- Link to Contact Us Section -->
+    </fieldset>
+
+    <footer>
+        <div class="footer-links">
+            <p>Contact Info: contact@sappeal.com</p>
+        </div>
+    </footer>
+</body>
+</html>
